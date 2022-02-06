@@ -1,0 +1,26 @@
+<dfa>
+    <state name="CARRY 0" ref="carry0_input" entry="true" final="true">
+        <conn to="carry0_input0" takes="0"/>
+        <conn to="carry0_input1" takes="1"/>
+    </state>
+    <state name="CARRY 0 INPUT 0" ref="carry0_input0" entry="false" final="false">
+        <conn to="carry0_input" takes="0"/>
+        <conn to="carry0_input" takes="1"/>
+    </state>
+    <state name="CARRY 0 INPUT 1" ref="carry0_input1" entry="false" final="false">
+        <conn to="carry0_input" takes="0"/>
+        <conn to="carry1_input" takes="1"/>
+    </state>
+    <state name="CARRY 1" ref="carry1_input" entry="false" final="true">
+        <conn to="carry1_input0" takes="0"/>
+        <conn to="carry1_input1" takes="1"/>
+    </state>
+    <state name="CARRY 1 INPUT 0" ref="carry1_input0" entry="false" final="false">
+        <conn to="carry0_input" takes="0"/>
+        <conn to="carry1_input" takes="1"/>
+    </state>
+    <state name="CARRY 1 INPUT 1" ref="carry1_input1" entry="false" final="false">
+        <conn to="carry1_input" takes="0"/>
+        <conn to="carry1_input" takes="1"/>
+    </state>
+</dfa>

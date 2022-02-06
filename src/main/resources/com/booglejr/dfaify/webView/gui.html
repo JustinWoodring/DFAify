@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+<script src="./mermaid.min.js"></script>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    .txt{
+        white-space: pre;
+        background-color:black;
+    }
+    .mermaid{
+        text-align:center;
+
+    }
+
+    .mermaid>*{
+        height:90vh;
+    }
+    html{
+        background-color:#ffffff;
+        height:100vh;
+        border:1px solid #ccc;
+    }
+    #mermaiddivinput,
+    #output{
+        display: none;
+        white-space: pre-line;
+    }
+</style>
+</head>
+<body>
+<div class="mermaid" id="mermaiddiv">
+
+</div>
+<div id="mermaiddivinput">
+</div>
+<div id="test"></div>
+<div id="output"></div>
+<script>
+
+mermaid.mermaidAPI.initialize({
+    startOnLoad:false
+});
+
+// identify an element to observe
+elementToObserve = document.getElementById('mermaiddivinput');
+
+// create a new instance of 'MutationObserver' named 'observer', 
+// passing it a callback function
+observer = new MutationObserver(function(mutationsList, observer) {
+    document.getElementById('output').innerText=btoa(document.getElementById('mermaiddivinput').innerText);
+    mermaid.mermaidAPI.render(
+        'test', 
+        atob(document.getElementById('mermaiddivinput').innerText),
+        function(svgCode){  
+            document.getElementById('mermaiddiv').innerHTML = svgCode;
+            //document.getElementById('output').innerText=atob(document.getElementById('mermaiddivinput').innerText);
+        }
+    );
+});
+
+// call 'observe' on that MutationObserver instance, 
+// passing it the element to observe, and the options object
+observer.observe(elementToObserve, {characterData: false, childList: true, attributes: false});
+</script>
+</body>

@@ -1,0 +1,10 @@
+<dfa>
+    <state name="EVEN A" ref="even" entry="true" final="true">
+        <conn to="odd" takes="a"/>
+        <conn to="even" takes="b"/>
+    </state>
+    <state name="ODD A" ref="odd" entry="false" final="false">
+        <conn to="even" takes="a"/>
+        <conn to="odd" takes="b"/>
+    </state>
+</dfa>
