@@ -1,7 +1,10 @@
 package com.booglejr.dfaify.models;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 import javax.xml.parsers.ParserConfigurationException;
 
@@ -9,14 +12,20 @@ import com.booglejr.dfaify.models.dfa.DFA;
 import com.booglejr.dfaify.models.dfa.DFAReader;
 import com.booglejr.dfaify.models.dfa.error.TooManyConnectionsTakingSameCharError;
 
+import org.apache.commons.io.IOUtils;
 import org.xml.sax.SAXException;
 
 public class AppModel {
     public DFA dfa;
     public String log;
 
-    public AppModel(File file){
-        loadNewDFA(file);
+    public AppModel(InputStream is) throws FileNotFoundException, IOException{
+        final File tempFile = File.createTempFile("temp", ".xml");
+        tempFile.deleteOnExit();
+        try (FileOutputStream out = new FileOutputStream(tempFile)) {
+            IOUtils.copy(is, out);
+        }
+        loadNewDFA(tempFile);
         log = new String();
     }
 
