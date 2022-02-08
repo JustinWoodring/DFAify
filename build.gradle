@@ -10,6 +10,7 @@ plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
     id 'org.openjfx.javafxplugin' version '0.0.10'
+    id 'org.beryx.jlink' version '2.24.4'
 }
 
 
@@ -36,5 +37,39 @@ javafx {
 application {
     // Define the main class for the application.
     mainClass = 'com.booglejr.dfaify.DFAify'
+    mainModule = 'com.booglejr.dfaify'
 }
 
+ext.os = org.gradle.internal.os.OperatingSystem.current()
+
+jlink{
+    
+    jpackage {
+        imageName = 'DFAify'
+        installerName = 'DFAify'
+        appVersion = "1.0.0"
+        installerOptions = [
+            '--verbose',
+            '--vendor', 'Justin Woodring',
+            '--copyright', 'Copyright 2022. Justin Woodring',
+            '--description', 'DFAify is a diagramming and graphical analysis tool supporting playback and stepping logic for DFAs.',
+            '--about-url', 'https://github.com/Booglejr/DFAify',
+            '--license-file', 'LICENSE'
+        ]
+        if(os.macOsX) {
+           jvmArgs = ["-Duser.dir=/tmp"]
+        } else if(os.windows) {
+            installerType = 'exe'
+            installerOptions += [
+                '--icon', 'src/main/resources/com/booglejr/dfaify/icons/dfaify.ico',
+                '--win-per-user-install',
+                '--win-dir-chooser',
+                '--win-menu',
+                '--win-shortcut'
+            ]
+            imageOptions += ['--icon', 'src/main/resources/com/booglejr/dfaify/icons/dfaify.ico']
+        } else {
+            installerType = 'deb' // 'rpm'
+        }
+    }
+}
