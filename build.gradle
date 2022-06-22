@@ -47,7 +47,7 @@ jlink{
     jpackage {
         imageName = 'DFAify'
         installerName = 'DFAify'
-        appVersion = "1.0.0"
+        appVersion = "1.0.1"
         installerOptions = [
             '--verbose',
             '--vendor', 'Justin Woodring',
