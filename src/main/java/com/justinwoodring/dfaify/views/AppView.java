@@ -1,12 +1,12 @@
-package com.booglejr.dfaify.views;
+package com.justinwoodring.dfaify.views;
 
 import java.io.File;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Base64;
 
-import com.booglejr.dfaify.controllers.AppController;
-import com.booglejr.dfaify.models.AppModel;
+import com.justinwoodring.dfaify.controllers.AppController;
+import com.justinwoodring.dfaify.models.AppModel;
 
 import org.w3c.dom.Document;
 
@@ -88,13 +88,13 @@ public class AppView extends StackPane{
                         timeline = new Timeline(new KeyFrame(Duration.seconds(2), new EventHandler<ActionEvent>() {
                             @Override
                             public void handle(ActionEvent event) {
+                                controller.stepDfa();
                                 Document doc = webEngine.getDocument();
                                 doc.getElementById("mermaiddivinput").setTextContent(
                                     Base64.getEncoder().encodeToString(
                                         model.dfa.getMermaidMd().getBytes()
                                     )
                                 );
-                                controller.stepDfa();
                             }
                         }));
 
@@ -103,7 +103,7 @@ public class AppView extends StackPane{
             }
         );
 
-        URL url = this.getClass().getResource("/com/booglejr/dfaify/webView/gui.html");
+        URL url = this.getClass().getResource("/com/justinwoodring/dfaify/webView/gui.html");
         webEngine.load(url.toString());
 
         //Scene Declaration
@@ -196,7 +196,7 @@ public class AppView extends StackPane{
         textArea.setEditable(false);
         textArea.setWrapText(true);
         try {
-            textArea.setFont(Font.loadFont(this.getClass().getResource("/com/booglejr/dfaify/fonts/DejaVuSansMono.ttf").toURI().toString(), 12));
+            textArea.setFont(Font.loadFont(this.getClass().getResource("/com/justinwoodring/dfaify/fonts/DejaVuSansMono.ttf").toURI().toString(), 12));
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }

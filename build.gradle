@@ -36,8 +36,8 @@ javafx {
 
 application {
     // Define the main class for the application.
-    mainClass = 'com.booglejr.dfaify.DFAify'
-    mainModule = 'com.booglejr.dfaify'
+    mainClass = 'com.justinwoodring.dfaify.DFAify'
+    mainModule = 'com.justinwoodring.dfaify'
 }
 
 ext.os = org.gradle.internal.os.OperatingSystem.current()
@@ -53,7 +53,7 @@ jlink{
             '--vendor', 'Justin Woodring',
             '--copyright', 'Copyright 2022. Justin Woodring',
             '--description', 'DFAify is a diagramming and graphical analysis tool supporting playback and stepping logic for DFAs.',
-            '--about-url', 'https://github.com/Booglejr/DFAify',
+            '--about-url', 'https://github.com/justinwoodring/DFAify',
             '--license-file', 'LICENSE'
         ]
         if(os.macOsX) {
@@ -61,13 +61,13 @@ jlink{
         } else if(os.windows) {
             installerType = 'exe'
             installerOptions += [
-                '--icon', 'src/main/resources/com/booglejr/dfaify/icons/dfaify.ico',
+                '--icon', 'src/main/resources/com/justinwoodring/dfaify/icons/dfaify.ico',
                 '--win-per-user-install',
                 '--win-dir-chooser',
                 '--win-menu',
                 '--win-shortcut'
             ]
-            imageOptions += ['--icon', 'src/main/resources/com/booglejr/dfaify/icons/dfaify.ico']
+            imageOptions += ['--icon', 'src/main/resources/com/justinwoodring/dfaify/icons/dfaify.ico']
         } else {
             installerType = 'deb' // 'rpm'
         }

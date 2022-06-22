@@ -1,4 +1,4 @@
-package com.booglejr.dfaify.models.dfa;
+package com.justinwoodring.dfaify.models.dfa;
 
 import java.io.File;
 import java.io.IOException;

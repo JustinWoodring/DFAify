@@ -1,4 +1,4 @@
-package com.booglejr.dfaify.models.dfa;
+package com.justinwoodring.dfaify.models.dfa;
 
 public class Connection {
     private State toState;

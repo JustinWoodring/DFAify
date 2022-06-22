@@ -1,4 +1,4 @@
-package com.booglejr.dfaify;
+package com.justinwoodring.dfaify;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -8,10 +8,10 @@ import java.net.URISyntaxException;
 
 import javax.xml.parsers.ParserConfigurationException;
 
-import com.booglejr.dfaify.controllers.AppController;
-import com.booglejr.dfaify.models.AppModel;
-import com.booglejr.dfaify.models.dfa.DFA;
-import com.booglejr.dfaify.views.AppView;
+import com.justinwoodring.dfaify.controllers.AppController;
+import com.justinwoodring.dfaify.models.AppModel;
+import com.justinwoodring.dfaify.models.dfa.DFA;
+import com.justinwoodring.dfaify.views.AppView;
 
 import org.apache.commons.io.IOUtils;
 import org.xml.sax.SAXException;
@@ -36,16 +36,17 @@ public class DFAify extends Application{
 
         stage.setTitle("DFAify");
 
-        InputStream is = DFAify.class.getResourceAsStream("/com/booglejr/dfaify/dfaify.png");
+        InputStream is = DFAify.class.getResourceAsStream("/com/justinwoodring/dfaify/dfaify.png");
         final File tempFile = File.createTempFile("tempImage", ".png");
         tempFile.deleteOnExit();
         try (FileOutputStream out = new FileOutputStream(tempFile)) {
             IOUtils.copy(is, out);
         }
 
-        stage.getIcons().add(new Image(tempFile.toString()));
+        Image icon = new Image("file:"+tempFile.toString());
+        stage.getIcons().add(icon);
 
-        AppModel appModel = new AppModel(DFAify.class.getResourceAsStream("/com/booglejr/dfaify/examples/one-bit-adder.xml"));
+        AppModel appModel = new AppModel(DFAify.class.getResourceAsStream("/com/justinwoodring/dfaify/examples/one-bit-adder.xml"));
         AppController appController = new AppController(appModel, stage);
         AppView appView = new AppView(appModel, appController);
 

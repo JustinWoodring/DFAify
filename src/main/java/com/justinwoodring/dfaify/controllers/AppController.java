@@ -1,11 +1,11 @@
-package com.booglejr.dfaify.controllers;
+package com.justinwoodring.dfaify.controllers;
 import java.io.File;
 
-import com.booglejr.dfaify.models.AppModel;
-import com.booglejr.dfaify.models.dfa.Connection;
-import com.booglejr.dfaify.models.dfa.error.StringContainsLettersNotInAlphabetError;
-import com.booglejr.dfaify.models.dfa.error.UnindexedStateError;
-import com.booglejr.dfaify.views.AppView;
+import com.justinwoodring.dfaify.models.AppModel;
+import com.justinwoodring.dfaify.models.dfa.Connection;
+import com.justinwoodring.dfaify.models.dfa.error.StringContainsLettersNotInAlphabetError;
+import com.justinwoodring.dfaify.models.dfa.error.UnindexedStateError;
+import com.justinwoodring.dfaify.views.AppView;
 
 import javafx.animation.Animation.Status;
 import javafx.stage.Stage;

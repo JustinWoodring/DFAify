@@ -1,4 +1,4 @@
-module com.booglejr.dfaify {
+module com.justinwoodring.dfaify {
     requires java.base;
     requires java.logging;
     requires javafx.base;
@@ -8,5 +8,5 @@ module com.booglejr.dfaify {
     requires jdk.jsobject;
     requires org.apache.commons.io;
 
-    exports com.booglejr.dfaify;
+    exports com.justinwoodring.dfaify;
 }

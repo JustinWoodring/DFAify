@@ -1,4 +1,4 @@
-package com.booglejr.dfaify.models;
+package com.justinwoodring.dfaify.models;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -8,9 +8,9 @@ import java.io.InputStream;
 
 import javax.xml.parsers.ParserConfigurationException;
 
-import com.booglejr.dfaify.models.dfa.DFA;
-import com.booglejr.dfaify.models.dfa.DFAReader;
-import com.booglejr.dfaify.models.dfa.error.TooManyConnectionsTakingSameCharError;
+import com.justinwoodring.dfaify.models.dfa.DFA;
+import com.justinwoodring.dfaify.models.dfa.DFAReader;
+import com.justinwoodring.dfaify.models.dfa.error.TooManyConnectionsTakingSameCharError;
 
 import org.apache.commons.io.IOUtils;
 import org.xml.sax.SAXException;

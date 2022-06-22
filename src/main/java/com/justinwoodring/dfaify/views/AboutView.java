@@ -1,9 +1,9 @@
-package com.booglejr.dfaify.views;
+package com.justinwoodring.dfaify.views;
 
 import java.net.URL;
 
-import com.booglejr.dfaify.DFAify;
-import com.booglejr.dfaify.DFAify.JavaApp;
+import com.justinwoodring.dfaify.DFAify;
+import com.justinwoodring.dfaify.DFAify.JavaApp;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -73,7 +73,7 @@ public class AboutView extends Stage {
         });
         
 
-        URL url = this.getClass().getResource("/com/booglejr/dfaify/webView/about.html");
+        URL url = this.getClass().getResource("/com/justinwoodring/dfaify/webView/about.html");
         webEngine.load(url.toString());
 
         Button hide = new Button("Hide");

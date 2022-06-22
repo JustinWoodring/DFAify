@@ -1,9 +1,9 @@
-package com.booglejr.dfaify.models.dfa;
+package com.justinwoodring.dfaify.models.dfa;
 
 import java.util.ArrayList;
 
-import com.booglejr.dfaify.models.dfa.error.StringContainsLettersNotInAlphabetError;
-import com.booglejr.dfaify.models.dfa.error.UnindexedStateError;
+import com.justinwoodring.dfaify.models.dfa.error.StringContainsLettersNotInAlphabetError;
+import com.justinwoodring.dfaify.models.dfa.error.UnindexedStateError;
 
 public class DFA {
     public String currentString;

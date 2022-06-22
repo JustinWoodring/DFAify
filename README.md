@@ -1,6 +1,6 @@
 <div align="center">
 
-![The Logo](https://raw.githubusercontent.com/Booglejr/DFAify/main/src/main/resources/com/booglejr/dfaify/dfaify.png)
+![The Logo](https://raw.githubusercontent.com/justinwoodring/DFAify/main/src/main/resources/com/justinwoodring/dfaify/dfaify.png)
 
 <h1>DFAify</h1>
 </div>
