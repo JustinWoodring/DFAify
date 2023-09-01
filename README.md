@@ -11,6 +11,8 @@
 
 I built DFAify as a hobby project to allow users to model and inspect the behaviour of basic DFAs.
 DFAify is a diagramming and graphical analysis tool supporting playback and stepping logic for DFAs.
+  
+![image](https://github.com/JustinWoodring/DFAify/assets/41842051/147d750d-b49f-4b29-b46f-af53240d35e1)
 
 ### Consider Supporting Me
 If you really love DFAify consider supporting me!  [:dollar: paypal.me/jwoodrg ](https://paypal.me/jwoodrg)
