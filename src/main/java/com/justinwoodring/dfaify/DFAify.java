@@ -71,6 +71,6 @@ public class DFAify extends Application{
     }
 
     public static String getVersion() {
-        return "v1.0.1a";
+        return "v1.0.2";
     }
 }
